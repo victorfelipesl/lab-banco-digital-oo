@@ -8,11 +8,14 @@ public class Main {
 		Conta cc = new ContaCorrente(venilton);
 		Conta poupanca = new ContaPoupanca(venilton);
 
-		cc.depositar(100);
-		cc.transferir(100, poupanca);
-		
-		cc.imprimirExtrato();
-		poupanca.imprimirExtrato();
+		// Exemplo: Adicionando contas à lista do banco
+		List<Conta> listaDeContas = new ArrayList<>();
+		listaDeContas.add(new ContaCorrente(new Cliente()));
+		listaDeContas.add(new ContaPoupanca(new Cliente()));
+		banco.setContas(listaDeContas);
+
+		// Chamada simples para imprimir todas as contas
+		banco.imprimirContas();
 	}
 
 }
