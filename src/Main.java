@@ -2,11 +2,8 @@
 public class Main {
 
 	public static void main(String[] args) {
-		Cliente venilton = new Cliente();
-		venilton.setNome("Venilton");
-		
-		Conta cc = new ContaCorrente(venilton);
-		Conta poupanca = new ContaPoupanca(venilton);
+		Banco banco = new Banco();
+		banco.setNome("Meu Banco Digital");
 
 		// Exemplo: Adicionando contas à lista do banco
 		List<Conta> listaDeContas = new ArrayList<>();
