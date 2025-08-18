@@ -1,6 +1,4 @@
-
 public class Main {
-
 	public static void main(String[] args) {
 		Banco banco = new Banco();
 		banco.setNome("Meu Banco Digital");
@@ -14,5 +12,4 @@ public class Main {
 		// Chamada simples para imprimir todas as contas
 		banco.imprimirContas();
 	}
-
 }
