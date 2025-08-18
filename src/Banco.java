@@ -21,4 +21,10 @@ public class Banco {
 		this.contas = contas;
 	}
 
+	// Novo método para imprimir todas as contas usando a Stream API
+	public void imprimirContas() {
+		System.out.println("--- Contas do " + this.nome + " ---");
+		this.contas.stream()
+				.forEach(conta -> conta.imprimirExtrato());
+	}
 }
