@@ -27,4 +27,26 @@ public class Banco {
 		this.contas.stream()
 				.forEach(conta -> conta.imprimirExtrato());
 	}
-}
+
+	public void imprimirNomesClientes() {
+		System.out.println("--- Clientes do " + this.nome + " ---");
+		this.contas.stream()
+				.map(conta -> conta.getCliente().getNome())
+				.forEach(System.out::println);
+	}
+
+	public void imprimirContasDevedoras() {
+		long numeroDeContasDevedoras = this.contas.stream()
+				.filter(conta -> conta.getSaldo() < 0)
+				.count(); // Conta quantos elementos passaram no filtro
+
+		if (numeroDeContasDevedoras > 0) {
+			System.out.println("--- Contas Devedoras ---");
+			this.contas.stream()
+					.filter(conta -> conta.getSaldo() < 0)
+					.forEach(IConta::imprimirExtrato);
+		} else {
+			System.out.println("Não há contas devedoras no banco.");
+		}
+	 }
+	}
